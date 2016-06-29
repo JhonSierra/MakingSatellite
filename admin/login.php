@@ -12,8 +12,9 @@
 <body>
 	<header>
     
-		<font>Iniciar sesión</font>
-		<a href="../Ropa/index.php"><img src="../pictures/making/logo.png"></a> <!--Logo de la empresa-->
+		 
+         <font>Iniciar sesión</font>
+		<a title="Logo - Making Satellite" href="../Ropa/index.php"><img src="../pictures/making/logo.png"></a> <!--Logo de la empresa-->
 	</header>
 
 	<section> <!--Formulario de login-->
@@ -22,21 +23,21 @@
         <form method="POST" action="../admin/validar_usuario.php">
 			<table>
 				<tr>
-					<td><input name="admin" type="text" required placeholder="Ingrese su Usuario"></td>
+					<td><input name="admin" type="text" title="Ingrese su usuario" required placeholder="Ingrese su Usuario"></td>
 				</tr>
 				<tr><td></td></tr>
 				<tr>
-					<td><input name="password_usuario"  type="password" required placeholder="Ingrese su contraseña"></td>
+					<td><input name="password_usuario"  type="password" required title="Ingrese su contraseña" placeholder="Ingrese su contraseña"></td>
 				</tr>
 				<tr><td></td></tr>
 				<tr>
-					<td><input type="submit" name="button" id="button" value="Enviar"/></td>
+					<td><input type="submit" name="button" id="button" title="Ingresar a Administrador" value="Enviar"/></td>
 				</tr>
 			</table>
 		</form>
 	</section>
    
-	<center><a href="../index.php" class="regresar"><span class="icon icon-home"></span>Regresar al inicio</a></center>
+	<center><a title="Regresar a Making Satellite" href="../index.php" class="regresar"><span class="icon icon-home"></span>Regresar al inicio</a></center>
 
 </body>
 

@@ -67,7 +67,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 <body>
 	<header>
 		<font>Bienvenido a</font>
-		<a title="Logo - Making Satellite" href="index.html"><img src="pictures/making/logo.png"></a> <!--Logo de la empresa-->
+		<a title="Logo - Making Satellite" href="index.php"><img src="pictures/making/logo.png"></a> <!--Logo de la empresa-->
 		<br>
 		<table class="logbar"> <!--Menú de login-->
 			<tr>
@@ -80,8 +80,8 @@ if (isset($_SERVER['QUERY_STRING'])) {
 			<ul>
 			<center>
 				<li><a target="_self" title="Inicio" href="index.php">Inicio</a></li>
-				<li><a target="_self" title="Catalogo" href="ver_producto.php">Catálogo</a></li>
-				<li><a target="_self" title="Contacto" href="#info">Contácto</a></li>
+				<li><a target="_self" title="Catalogo" href="categoria_ver.php">Catálogo</a></li>
+				<li><a target="_self" title="Contacto" href="#info">Contacto</a></li>
                 <li><a target="_self" title="Carrito" href="carrito_lista.php">Carrito</a></li>
 			</center>
 			</ul>
@@ -104,7 +104,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 			<br><center><img src="pictures/making/Icon-añadir.png" width="256" height="256">
 			<a href="carrito_lista.php"><h3>Carrito</h3></a>
             <br>
-			<p>Tu Producto se Añadio al Carrito</p>
+			<p>Tu producto se añadió al carrito</p>
             </center>
             <br>
             <br>
@@ -118,7 +118,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 
 	<aside> <!--Formulario de login-->
 		<span class="barra"> <!--Menú de ropa-->
-        <h3><marquee align="left" bgcolor="#fff" >Catalogo</marquee></h3>
+        <h3><marquee align="left" bgcolor="#fff" >Catálogo</marquee></h3>
 			<h3><?php include("includes/catalogo.php");?></h3>
             
 		</span>
@@ -127,7 +127,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 	<br>
 	<footer> <!--Pie de página-->
 		<div id="info"> <!--Datos de contácto-->
-			<h3>Contácto</h3>
+			<h3>Contacto</h3>
 			<p>Dirección: Carrera 81G N° 73 - 57 Sur | Bogotá</p>
 			<br>
 			<p class="tel">Teléfono: 302 5171</p>
@@ -141,7 +141,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 			<a target="_blank" href="https://www.youtube.com/"><img src="pictures/redes sociales/youtube.png" width="25px" height="22px"></a>
 		</div>
 		<div class="admin">
-		<a href="out/login-administrador.php" title="Ingresar como administrador">Administración</a></div> <!--Login de administrador-->
+		<a href="admin/index.php" title="Ingresar como administrador">Administración</a></div> <!--Login de administrador-->
 		<p class="derechos">© Making Satellite - 2016</p> <!--Derechos de autor-->
 	</footer>
 

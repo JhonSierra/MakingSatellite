@@ -1,3 +1,14 @@
+<?php
+//creamos la sesion
+session_start();
+//validamos si se ha hecho o no el inicio de sesion correctamente
+//si no se ha hecho la sesion nos regresará a login.php
+if(!isset($_SESSION['usuario'])||($_SESSION['seguridad']!="1")) 
+{
+  header('Location: login.php'); 
+  exit();
+}
+?>
 <?php require_once('../Connections/conexionropa.php'); ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
@@ -57,7 +68,7 @@ if (isset($_GET["recordID"])) {
   $varCategoria_Recordset1 = $_GET["recordID"];
 }
 mysql_select_db($database_conexionropa, $conexionropa);
-$query_Recordset1 = sprintf("SELECT * FROM tblcategoria ORDER BY tblcategoria.idCategoria = %s", GetSQLValueString($varCategoria_Recordset1, "int"));
+$query_Recordset1 = sprintf("SELECT * FROM tblcategoria WHERE tblcategoria.idCategoria = %s", GetSQLValueString($varCategoria_Recordset1, "int"));
 $Recordset1 = mysql_query($query_Recordset1, $conexionropa) or die(mysql_error());
 $row_Recordset1 = mysql_fetch_assoc($Recordset1);
 $totalRows_Recordset1 = mysql_num_rows($Recordset1);
@@ -73,33 +84,34 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
 </head>
 
 <body>
-<a href="logout.php" class="logout"><span class="icon icon-log-out"></span>Cerrar sesión</a> <!--Botón de logout-->
+<a title="Cerrar sesión" href="logout.php" class="logout"><span class="icon icon-log-out"></span>Cerrar sesión</a> <!--Botón de logout-->
         <br>
 		<br>
 	<header>
-		<font>Administracion</font>
-		<a href="../index.html"><img src="../pictures/making/logo.png"></a> <!--Logo de la empresa--> 		
+		<font>Administración</font>
+		<a title="Logo - Making Satellite" href="../index.html"><img src="../pictures/making/logo.png"></a> <!--Logo de la empresa--> 		
 	</header>
 
 	<div class="contenedor">
 	<section>
 		<article> <!--Información de la empresa-->
 			<center>
-          <h2>Editar Categoria</h2>
+          <h2>Editar Categoría</h2>
           <form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
       <table align="center">
         <tr valign="baseline">
-          <td nowrap="nowrap" align="right">Descripcion:</td>
-          <td><input type="text" name="strDescripcion" value="<?php echo htmlentities($row_Recordset1['strDescripcion'], ENT_COMPAT, 'utf-8'); ?>" size="32" /></td>
+          <td nowrap="nowrap" align="right">Descripción:</td>
+          <td><input type="text" title="Editar Categoria" name="strDescripcion" value="<?php echo htmlentities($row_Recordset1['strDescripcion'], ENT_COMPAT, 'utf-8'); ?>" size="32" /></td>
         </tr>
         <tr valign="baseline">
           <td nowrap="nowrap" align="right">&nbsp;</td>
-          <td><input type="submit" value="Actualizar registro" /></td>
+          <td><input type="submit" title="Actualizar registro" value="Actualizar registro" /></td>
         </tr>
       </table>
       <input type="hidden" name="MM_update" value="form1" />
       <input type="hidden" name="idCategoria" value="<?php echo $row_Recordset1['idCategoria']; ?>" />
     </form>
+    
           </center>
 			
 		</article>
@@ -108,9 +120,9 @@ $totalRows_Recordset1 = mysql_num_rows($Recordset1);
 	<section1> <!--Formulario de login-->
 		<span class="barra"> <!--Menú lateral-->
 			<ul>
-            <li><a href="../admin/usuarios_lista.php">Usuarios</a></li>
-				<li><a href="../admin/productos_lista.php">Productos</a></li>
-				<li><a href="../admin/categorias_lista.php">Categorías</a></li>
+            <li><a title="Usuarios" href="../admin/usuarios_lista.php">Usuarios</a></li>
+				<li><a title="Productos" href="../admin/productos_lista.php">Productos</a></li>
+				<li><a title="Categorías" href="../admin/categorias_lista.php">Categorías</a></li>
 				
 			</ul>
 		</span>

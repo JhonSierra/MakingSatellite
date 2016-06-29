@@ -1,3 +1,14 @@
+<?php
+//creamos la sesion
+session_start();
+//validamos si se ha hecho o no el inicio de sesion correctamente
+//si no se ha hecho la sesion nos regresará a login.php
+if(!isset($_SESSION['usuario'])||($_SESSION['seguridad']!="1")) 
+{
+  header('Location: login.php'); 
+  exit();
+}
+?>
 <?php require_once('../Connections/conexionropa.php'); ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
@@ -62,28 +73,28 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 </head>
 
 <body>
-<a href="logout.php" class="logout"><span class="icon icon-log-out"></span>Cerrar sesión</a> <!--Botón de logout-->
+<a title="Cerrar Sesion" href="logout.php" class="logout"><span class="icon icon-log-out"></span>Cerrar sesión</a> <!--Botón de logout-->
         <br>
 		<br>
 	<header>
-		<font>Administracion</font>
-		<a href="../index.html"><img src="../pictures/making/logo.png"></a> <!--Logo de la empresa--> 		
+		<font>Administración</font>
+		<a title="Logo - Making Satellite" href="../index.html"><img src="../pictures/making/logo.png"></a> <!--Logo de la empresa--> 		
 	</header>
 
 	<div class="contenedor">
 	<section>
 		<article> <!--Información de la empresa-->
 			<center>
-          <h2>Añadir Categoria</h2>
+          <h2>Añadir Categoría</h2>
           <form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
       <table align="center">
         <tr valign="baseline">
           <td nowrap="nowrap" align="right">Descripcion:</td>
-          <td><input type="text" name="strDescripcion" value="" size="32" /></td>
+          <td><input type="text" title="Descripcion Categoria" name="strDescripcion" value="" size="32" /></td>
         </tr>
         <tr valign="baseline">
           <td nowrap="nowrap" align="right">&nbsp;</td>
-          <td><input type="submit" value="Insertar Categoria" /></td>
+          <td><input type="submit" title="Insertar Categoría" value="Insertar Categoría" /></td>
         </tr>
       </table>
       <input type="hidden" name="MM_insert" value="form1" />
@@ -96,9 +107,9 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 	<section1> <!--Formulario de login-->
 		<span class="barra"> <!--Menú lateral-->
 			<ul>
-            <li><a href="../admin/usuarios_lista.php">Usuarios</a></li>
-				<li><a href="../admin/productos_lista.php">Productos</a></li>
-				<li><a href="../admin/categorias_lista.php">Categorías</a></li>
+            <li><a title="Usuarios" href="../admin/usuarios_lista.php">Usuarios</a></li>
+				<li><a title="Productos" href="../admin/productos_lista.php">Productos</a></li>
+				<li><a title="Categorias" href="../admin/categorias_lista.php">Categorías</a></li>
 				
 			</ul>
 		</span>

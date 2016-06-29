@@ -1,3 +1,14 @@
+<?php
+//creamos la sesion
+session_start();
+//validamos si se ha hecho o no el inicio de sesion correctamente
+//si no se ha hecho la sesion nos regresará a login.php
+if(!isset($_SESSION['usuario'])||($_SESSION['seguridad']!="1")) 
+{
+  header('Location: login.php'); 
+  exit();
+}
+?>
 <?php require_once('../Connections/conexionropa.php'); ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
@@ -63,31 +74,29 @@ $totalPages_Recordset1 = ceil($totalRows_Recordset1/$maxRows_Recordset1)-1;
 </head>
 
 <body>
-<a href="logout.php" class="logout"><span class="icon icon-log-out"></span>Cerrar sesion</a> <!--Botón de logout-->
+<a title="Cerrar Sesion" href="logout.php" class="logout"><span class="icon icon-log-out"></span>Cerrar sesión</a> <!--Botón de logout-->
         <br>
 		<br>
-	<header>
-		<font>Administracion</font>
-		<a href="../index.html"><img src="../pictures/making/logo.png"></a> <!--Logo de la empresa--> 		
+	<header><font>Administración</font><a title="Logo - Making Satellite" href="../index.html"><img src="../pictures/making/logo.png"></a> <!--Logo de la empresa--> 		
 	</header>
 
 	<div class="contenedor">
 	<section>
 		<article> <!--Información de la empresa-->
-			
-          <h2>Lista de Categorias</h2>
-          <p><a href="categorias_add.php">A&ntilde;adir Categoria</a></p>
+			<h1><marquee align="left" bgcolor="#0099FF">Lista de Categorías</marquee></h1>
+          <br><br>
+          <p><a title="Añadir Categoria" href="categorias_add.php"><img src="../pictures/making/Icon-editar.png" width="100" height="80"><br>Añadir Categoría</a></p>
           <br>
           <br>
-	<table width="486" border="0" cellpadding="0" cellspacing="0">
+	<table width="800" border="0" cellpadding="0" cellspacing="0">
 	  <tr>
-	    <td bgcolor="#999999">Nombre de Categoria</td>
-	    <td bgcolor="#999999">Acciones</td>
+	    <td bgcolor="#0099FF">Nombre de Categoría</td>
+	    <td bgcolor="#0099FF">Acciones</td>
       </tr>
 	  <?php do { ?>
 	    <tr>
 	      <td><?php echo $row_Recordset1['strDescripcion']; ?></td>
-	      <td><a href="categorias_edit.php?recordID=<?php echo $row_Recordset1['idCategoria']; ?>">Editar</a></td>
+	      <td><a title="Editar Categoria" href="categorias_edit.php?recordID=<?php echo $row_Recordset1['idCategoria']; ?>">Editar</a></td>
         </tr>
 	    <?php } while ($row_Recordset1 = mysql_fetch_assoc($Recordset1)); ?>
     </table>

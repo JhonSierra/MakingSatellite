@@ -94,7 +94,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 <body>
 	<header>
 		<font>Registro</font>
-		<a title="Logo - Making Satellite" href="../Ropa/index.php"><img src="../Ropa/pictures/making/logo.png"></a> <!--Logo de la empresa-->
+		<a title="Logo - Making Satellite" href="index.php"><img src="../Ropa/pictures/making/logo.png"></a> <!--Logo de la empresa-->
 	</header>
 
 	<section> <!--Formulario de registro-->

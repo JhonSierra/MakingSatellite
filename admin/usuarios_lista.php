@@ -1,3 +1,14 @@
+<?php
+//creamos la sesion
+session_start();
+//validamos si se ha hecho o no el inicio de sesion correctamente
+//si no se ha hecho la sesion nos regresará a login.php
+if(!isset($_SESSION['usuario'])||($_SESSION['seguridad']!="1")) 
+{
+  header('Location: login.php'); 
+  exit();
+}
+?>
 <?php require_once('../Connections/conexionropa.php'); ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
@@ -32,7 +43,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 
 mysql_select_db($database_conexionropa, $conexionropa);
-$query_DatosUsuarios = "SELECT * FROM tblusuario ORDER BY tblusuario.strNombre ASC";
+$query_DatosUsuarios = "SELECT * FROM tblusuario ORDER BY tblusuario.idUsuario ASC";
 $DatosUsuarios = mysql_query($query_DatosUsuarios, $conexionropa) or die(mysql_error());
 $row_DatosUsuarios = mysql_fetch_assoc($DatosUsuarios);
 $totalRows_DatosUsuarios = mysql_num_rows($DatosUsuarios);
@@ -48,12 +59,10 @@ $totalRows_DatosUsuarios = mysql_num_rows($DatosUsuarios);
 </head>
 
 <body>
-<a href="logout.php" class="logout"><span class="icon icon-log-out"></span>Cerrar sesión</a> <!--Botón de logout-->
+<a title="Cerrar sesión" href="logout.php" class="logout"><span class="icon icon-log-out"></span>Cerrar sesión</a> <!--Botón de logout-->
         <br>
 		<br>
-	<header>
-		<font>Administracion</font>
-		<a href="../index.html"><img src="../pictures/making/logo.png"></a> <!--Logo de la empresa--> 		
+	<header><font>Administración</font><a title="Logo - Making Satellite" href="../index.html"><img src="../pictures/making/logo.png"></a> <!--Logo de la empresa--> 		
 	</header>
 
 	<div class="contenedor">
@@ -61,15 +70,12 @@ $totalRows_DatosUsuarios = mysql_num_rows($DatosUsuarios);
 		<article> <!--Información de la empresa-->
 			
           <h2>Lista de Usuarios</h2>
-          <table width="850" border="0" align="center" cellpadding="0" cellspacing="0">
+          <table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
 	  <tr class="tablaprincipal">
-	    <td width="139">id</td>
-	    <td width="152"><h1>Nombre</h1></td>
-	    <td width="152"><h1>Apellido</h1></td>
-	    <td width="152"><h1>Documento</h1></td>
-	    <td width="361"><h1>Telefono</h1></td>
-        <td width="361"><h1>Direccion</h1></td>
-        <td width="361"><h1>Email</h1></td>
+	    <td bgcolor="#0099FF" width="139">id</td>
+	    <td bgcolor="#0099FF" width="152">Nombre</td>
+	    <td bgcolor="#0099FF" width="152">Apellido</td>
+	    <td bgcolor="#0099FF" width="152">Documento</td>
       </tr>
 	  <?php do { ?>
 	    <trs>
@@ -78,9 +84,6 @@ $totalRows_DatosUsuarios = mysql_num_rows($DatosUsuarios);
 	      <td><?php echo $row_DatosUsuarios['strNombre']; ?>&nbsp; </td>
 	      <td><?php echo $row_DatosUsuarios['strApellido']; ?></td>
 	      <td><?php echo $row_DatosUsuarios['intDocumento']; ?></td>
-	      <td><?php echo $row_DatosUsuarios['intNumeroTelefono']; ?></td>
-          <td><?php echo $row_DatosUsuarios['strDireccion']; ?></td>
-          <td><?php echo $row_DatosUsuarios['strEmail']; ?></td>
         </tr>
 	    <?php } while ($row_DatosUsuarios = mysql_fetch_assoc($DatosUsuarios)); ?>
     </table>
@@ -96,9 +99,9 @@ $totalRows_DatosUsuarios = mysql_num_rows($DatosUsuarios);
 	<section1> <!--Formulario de login-->
 		<span class="barra"> <!--Menú lateral-->
 			<ul>
-            <li><a href="../admin/usuarios_lista.php">Usuarios</a></li>
-				<li><a href="../admin/productos_lista.php">Productos</a></li>
-				<li><a href="../admin/categorias_lista.php">Categorías</a></li>
+            <li><a title="Usuarios" href="../admin/usuarios_lista.php">Usuarios</a></li>
+				<li><a title="Productos" href="../admin/productos_lista.php">Productos</a></li>
+				<li><a title="Categorias" href="../admin/categorias_lista.php">Categorías</a></li>
 				
 			</ul>
 		</span>

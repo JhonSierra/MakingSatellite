@@ -65,7 +65,7 @@ if (isset($_POST['strEmail'])) {
     //declare two session variables and assign them
     $_SESSION['MM_Username'] = $loginUsername;
     $_SESSION['MM_UserGroup'] = $loginStrGroup;
-	$_SESSION['MM_IdUsuario'] = $row_LoginRS["IdUsuario"];	      
+	$_SESSION['MM_IdUsuario'] = $row_LoginRS["idUsuario"];	      
 
     if (isset($_SESSION['PrevUrl']) && false) {
       $MM_redirectLoginSuccess = $_SESSION['PrevUrl'];	
@@ -91,7 +91,7 @@ if (isset($_POST['strEmail'])) {
 <body>
 	<header>
 		<font>Bienvenido a</font>
-		<a title="Logo - Making Satellite" href="index.html"><img src="pictures/making/logo.png"></a> <!--Logo de la empresa-->
+		<a title="Logo - Making Satellite" href="index.php"><img src="pictures/making/logo.png"></a> <!--Logo de la empresa-->
 		<br>
 		<table class="logbar"> <!--Menú de login-->
 			<tr>
@@ -104,8 +104,8 @@ if (isset($_POST['strEmail'])) {
 			<ul>
 			<center>
 				<li><a target="_self" title="Inicio" href="index.php">Inicio</a></li>
-				<li><a target="_self" title="Catalogo" href="ver_producto.php">Catálogo</a></li>
-				<li><a target="_self" title="Contacto" href="#info">Contácto</a></li>
+				<li><a target="_self" title="Catalogo" href="categoria_ver.php">Catálogo</a></li>
+				<li><a target="_self" title="Contacto" href="#info">Contacto</a></li>
 				
                 <li><a target="_self" title="Carrito" href="carrito_lista.php">Carrito</a></li>
 			</center>
@@ -126,8 +126,25 @@ if (isset($_POST['strEmail'])) {
 	<div class="contenedor">
 	<section>
 		<article> <!--Información de la empresa-->
-			<h2><marquee align="left" bgcolor="#424242">Nosotros</marquee></h2>
-			<p>Somos una entidad dedicada al diseño y confección de ropa, contamos con una gran experiencia en la parte textil, lo que garantiza la calidad de nuestros productos y la satisfaccion de nuestros clientes.</p>
+			<h2><center><font color="#186BD0" >Nosotros</font></center></h2>
+			<p>Somos una entidad dedicada al diseño y confección de ropa, contamos con una gran experiencia en la parte textil, lo que garantiza la calidad de nuestros productos y la satisfacción de nuestros clientes.</p>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h2><marquee align="left" bgcolor="#424242">Misión</marquee></h2>
+			<p>Ser una empresa dedicada a la innovación en compras online, confección y venta de ropa online, innovando en el área textil y usando nuevas herramientas para garantizar una cómoda forma para realizar los pedidos y compras de los productos textiles.
+</p>
+<br>
+<br>
+<br>
+<br>
+<h2><marquee align="left" bgcolor="#424242">Visión</marquee></h2>
+			<p>En el 2021 conseguir que sea una entidad reconocida a nivel nacional, posicionándola en un lugar privilegiado de la industria del desarrollo, para que de esta manera se cuente con una extensa cantidad de clientes fijos y también poder generar oportunidades de trabajo.
+
+Esta es una manera de contribuir al desarrollo del país.
+
+</p>
 		</article>
 	</section>
 
@@ -136,7 +153,7 @@ if (isset($_POST['strEmail'])) {
 		<form id="form1" name="form1" method="POST" action="<?php echo $loginFormAction; ?>">
 		<table>
 			<tr>
-				<td align="right"><label for="">E-mail:&nbsp;</label></td>
+				<td align="right"><label for="">Correo electrónico:&nbsp;</label></td>
 				<td><input type="text" name="strEmail" id="strEmail" title="Email" placeholder="Ingrese su dirección de correo electrónico"></td>
 			</tr>
 			<tr><td></td></tr>
@@ -146,12 +163,12 @@ if (isset($_POST['strEmail'])) {
 			</tr>
 			<tr><td></td></tr>
 			<tr>
-				<td colspan="2"><center><input type="submit" title="Enviar" name="button" id="button" value="Enviar"/></center></td>
+				<td colspan="2"><center><input type="submit" title="Entrar" name="button" id="button" value="Entrar"/></center></td>
 			</tr>
 			<tr><td></td></tr>
 			<tr><td></td></tr>
 			<tr>
-				<td colspan="2"><center><a title="¿Olvidaste tu contraseña?" href="Ropa/verificar-correo.php">¿Olvidaste tu contraseña?</a></center></td>
+				<td colspan="2"><center><a title="¿Olvidaste tu contraseña?" href="acceso.php">¿Olvidaste tu contraseña?</a></center></td>
 				</tr>
 				<tr><td></td></tr>
 				<tr>
@@ -164,7 +181,7 @@ if (isset($_POST['strEmail'])) {
 	<br>
 	<footer> <!--Pie de página-->
 		<div id="info"> <!--Datos de contácto-->
-			<h3>Contácto</h3>
+			<h3>Contacto</h3>
 			<p>Dirección: Carrera 81G N° 73 - 57 Sur | Bogotá</p>
 			<br>
 			<p class="tel">Teléfono: 302 5171</p>

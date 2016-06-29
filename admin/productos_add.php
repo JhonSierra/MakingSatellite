@@ -1,3 +1,14 @@
+<?php
+//creamos la sesion
+session_start();
+//validamos si se ha hecho o no el inicio de sesion correctamente
+//si no se ha hecho la sesion nos regresará a login.php
+if(!isset($_SESSION['usuario'])||($_SESSION['seguridad']!="1")) 
+{
+  header('Location: login.php'); 
+  exit();
+}
+?>
 <?php require_once('../Connections/conexionropa.php'); ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
@@ -73,12 +84,10 @@ $totalRows_ConsultaCategorias = mysql_num_rows($ConsultaCategorias);
 </head>
 
 <body>
-<a href="logout.php" class="logout"><span class="icon icon-log-out"></span>Cerrar sesión</a> <!--Botón de logout-->
+<a title="Cerrar sesión" href="logout.php" class="logout"><span class="icon icon-log-out"></span>Cerrar sesión</a> <!--Botón de logout-->
         <br>
 		<br>
-	<header>
-		<font>Administracion</font>
-		<a href="../index.html"><img src="../pictures/making/logo.png"></a> <!--Logo de la empresa--> 		
+	<header><font>Administración</font><a title="Logo - Making Satellite" href="../index.html"><img src="../pictures/making/logo.png"></a> <!--Logo de la empresa--> 		
 	</header>
 
 	<div class="contenedor">
@@ -101,38 +110,38 @@ $totalRows_ConsultaCategorias = mysql_num_rows($ConsultaCategorias);
         <tr valign="baseline">
           <td nowrap="nowrap" align="right">Nombre:</td>
           <td><span id="sprytextfield1">
-            <input type="text" name="strNombre" value="" size="32" />
+            <input type="text" name="strNombre" value="" size="32" title="Insertar Nombre" />
           </span></td>
         </tr>
         <tr valign="baseline">
           <td nowrap="nowrap" align="right">Talla:</td>
           <td><span id="sprytextfield2">
-            <input type="text" name="strSEO" value="" size="32" />
+            <input type="text" name="strSEO" value="" size="32" title="Insertar Talla" />
           </span></td>
         </tr>
         <tr valign="baseline">
           <td nowrap="nowrap" align="right">Precio:</td>
           <td><span id="sprytextfield3">
-            <input type="text" name="dblPrecio" value="" size="32" />
+            <input type="text" name="dblPrecio" value="" size="32" title="Insertar Precio" />
           </span></td>
         </tr>
         <tr valign="baseline">
           <td nowrap="nowrap" align="right">Imagen</td>
           <td><label for="strImagen"></label>
-          <input type="text" name="strImagen" id="strImagen" />
-          <input type="button" name="button" id="button" value="Subir Imagen" onClick="javascript:subirimagen();"/></td>
+          <input type="text" name="strImagen" id="strImagen" title="Insertar Imagen" />
+          <input type="button" name="button" id="button" value="Subir Imagen" title="Subir Imagen" onClick="javascript:subirimagen();"/></td>
         </tr>
         <tr valign="baseline">
           <td nowrap="nowrap" align="right">Estado:</td>
-          <td><select name="intEstado">
+          <td><select name="intEstado" title="Elegir Estado">
             <option value="1" <?php if (!(strcmp(1, ""))) {echo "SELECTED";} ?>>Activo</option>
             <option value="0" <?php if (!(strcmp(0, ""))) {echo "SELECTED";} ?>>Inactivo</option>
           </select></td>
         </tr>
         <tr valign="baseline">
-          <td nowrap="nowrap" align="right">Categoria:</td>
+          <td nowrap="nowrap" align="right">Categoría:</td>
           <td><label for="intCategoria"></label>
-            <select name="intCategoria" id="intCategoria">
+            <select name="intCategoria" id="intCategoria" title="Elegir Categoria">
               <?php
 do {  
 ?>
@@ -149,7 +158,7 @@ do {
         </tr>
         <tr valign="baseline">
           <td nowrap="nowrap" align="right">&nbsp;</td>
-          <td><input type="submit" value="Insertar Producto" /></td>
+          <td><input type="submit" value="Insertar Producto" title="Insertar Producto" /></td>
         </tr>
       </table>
       <input type="hidden" name="MM_insert" value="form1" />
@@ -168,9 +177,9 @@ var sprytextfield3 = new Spry.Widget.ValidationTextField("sprytextfield3");
 	<section1> <!--Formulario de login-->
 		<span class="barra"> <!--Menú lateral-->
 			<ul>
-            <li><a href="../admin/usuarios_lista.php">Usuarios</a></li>
-				<li><a href="../admin/productos_lista.php">Productos</a></li>
-				<li><a href="../admin/categorias_lista.php">Categorías</a></li>
+            <li><a title="Usuarios" href="../admin/usuarios_lista.php">Usuarios</a></li>
+				<li><a title="Productos" href="../admin/productos_lista.php">Productos</a></li>
+				<li><a title="Categorias" href="../admin/categorias_lista.php">Categorías</a></li>
 				
 			</ul>
 		</span>

@@ -27,8 +27,8 @@
 			<ul>
 			<center>
 				<li><a target="_self" title="Inicio" href="index.php">Inicio</a></li>
-				<li><a target="_self" title="Catalogo" href="ver_producto.php">Catálogo</a></li>
-				<li><a target="_self" title="Contacto" href="#info">Contácto</a></li>
+				<li><a target="_self" title="Catalogo" href="categoria_ver.php">Catálogo</a></li>
+				<li><a target="_self" title="Contacto" href="#info">Contacto</a></li>
                 <li><a target="_self" title="Carrito" href="carrito_lista.php">Carrito</a></li>
 			</center>
 			</ul>
@@ -49,7 +49,7 @@
 	<section>
 		<article> <!--Información de la empresa-->
 			<center><h2><marquee align="left" bgcolor="#424242">Ha ocurrido un error.</marquee></h2><p><img src="pictures/making/Icono-advertencia.png"></p>
-            <a href="acceso.php">Intentalo de nuevo</a></center>
+            <a href="acceso.php">Inténtalo de nuevo</a></center>
 			<br>
             <br>
             <br>
@@ -61,6 +61,7 @@
 
 	<aside> <!--Formulario de login-->
 		<span class="barra"> <!--Menú de ropa-->
+        <h3><marquee align="left" bgcolor="#fff" >Catálogo</marquee></h3>
 			<h3><?php include("includes/catalogo.php");?></h3>
             
 		</span>
@@ -69,7 +70,7 @@
 	<br>
 	<footer> <!--Pie de página-->
 		<div id="info"> <!--Datos de contácto-->
-			<h3>Contácto</h3>
+			<h3>Contacto</h3>
 			<p>Dirección: Carrera 81G N° 73 - 57 Sur | Bogotá</p>
 			<br>
 			<p class="tel">Teléfono: 302 5171</p>

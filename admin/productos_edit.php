@@ -1,3 +1,14 @@
+<?php
+//creamos la sesion
+session_start();
+//validamos si se ha hecho o no el inicio de sesion correctamente
+//si no se ha hecho la sesion nos regresará a login.php
+if(!isset($_SESSION['usuario'])||($_SESSION['seguridad']!="1")) 
+{
+  header('Location: login.php'); 
+  exit();
+}
+?>
 <?php require_once('../Connections/conexionropa.php'); ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
@@ -84,12 +95,10 @@ $totalRows_ConsultaCategorias = mysql_num_rows($ConsultaCategorias);
 </head>
 
 <body>
-<a href="logout.php" class="logout"><span class="icon icon-log-out"></span>Cerrar sesión</a> <!--Botón de logout-->
+<a title="Cerrar sesión" href="logout.php" class="logout"><span class="icon icon-log-out"></span>Cerrar sesión</a> <!--Botón de logout-->
         <br>
 		<br>
-	<header>
-		<font>Administracion</font>
-		<a href="../index.html"><img src="../pictures/making/logo.png"></a> <!--Logo de la empresa--> 		
+	<header><font>Administración</font><a title="Logo - Making Satellite" href="../index.html"><img src="../pictures/making/logo.png"></a> <!--Logo de la empresa--> 		
 	</header>
 
 	<div class="contenedor">
@@ -110,26 +119,26 @@ $totalRows_ConsultaCategorias = mysql_num_rows($ConsultaCategorias);
       <table align="center">
         <tr valign="baseline">
           <td nowrap="nowrap" align="right">Nombre:</td>
-          <td><input type="text" name="strNombre" value="<?php echo htmlentities($row_DatosProducto['strNombre'], ENT_COMPAT, 'utf-8'); ?>" size="32" /></td>
+          <td><input type="text" name="strNombre" title="Editar Nombre" value="<?php echo htmlentities($row_DatosProducto['strNombre'], ENT_COMPAT, 'utf-8'); ?>" size="32" /></td>
         </tr>
         <tr valign="baseline">
-          <td nowrap="nowrap" align="right">SEO:</td>
-          <td><input type="text" name="strSEO" value="<?php echo htmlentities($row_DatosProducto['strSEO'], ENT_COMPAT, 'utf-8'); ?>" size="32" /></td>
+          <td nowrap="nowrap" align="right">Talla:</td>
+          <td><input type="text" name="strSEO" title="Editar Talla" value="<?php echo htmlentities($row_DatosProducto['strSEO'], ENT_COMPAT, 'utf-8'); ?>" size="32" /></td>
         </tr>
         <tr valign="baseline">
           <td nowrap="nowrap" align="right">Precio:</td>
-          <td><input type="text" name="dblPrecio" value="<?php echo htmlentities($row_DatosProducto['dblPrecio'], ENT_COMPAT, 'utf-8'); ?>" size="32" /></td>
+          <td><input type="text" name="dblPrecio" title="Editar Precio" value="<?php echo htmlentities($row_DatosProducto['dblPrecio'], ENT_COMPAT, 'utf-8'); ?>" size="32" /></td>
         </tr>
         <tr valign="baseline">
           <td nowrap="nowrap" align="right">Estado:</td>
-          <td><select name="intEstado">
+          <td><select name="intEstado" title="Editar Estado">
             <option value="1" <?php if (!(strcmp(1, htmlentities($row_DatosProducto['intEstado'], ENT_COMPAT, 'utf-8')))) {echo "SELECTED";} ?>>Activo</option>
             <option value="0" <?php if (!(strcmp(0, htmlentities($row_DatosProducto['intEstado'], ENT_COMPAT, 'utf-8')))) {echo "SELECTED";} ?>>Inactivo</option>
           </select></td>
         </tr>
         <tr valign="baseline">
-          <td nowrap="nowrap" align="right">Categoria:</td>
-          <td><select name="intCategoria">
+          <td nowrap="nowrap" align="right">Categoría:</td>
+          <td><select name="intCategoria" title="Editar Categoria">
             <?php 
 do {  
 ?>
@@ -142,13 +151,13 @@ do {
         <tr> </tr>
         <tr valign="baseline">
           <td nowrap="nowrap" align="right">Imagen:</td>
-          <td><input type="text" name="strImagen" value="<?php echo htmlentities($row_DatosProducto['strImagen'], ENT_COMPAT, 'utf-8'); ?>" size="32" /> 
-            <input type="button" name="button" id="button" value="Subir Imagen" onClick="javascript:subirimagen();"/>
+          <td><input type="text" name="strImagen" title="Editar Imagen" value="<?php echo htmlentities($row_DatosProducto['strImagen'], ENT_COMPAT, 'utf-8'); ?>" size="32" /> 
+            <input type="button" name="button" id="button" title="Subir Imagen" value="Subir Imagen" onClick="javascript:subirimagen();"/>
           </p></td>
         </tr>
         <tr valign="baseline">
           <td nowrap="nowrap" align="right">&nbsp;</td>
-          <td><input type="submit" value="Actualizar registro" /></td>
+          <td><input type="submit" title="Actualizar Registro"value="Actualizar registro" /></td>
         </tr>
       </table>
       <input type="hidden" name="MM_update" value="form1" />
@@ -162,9 +171,9 @@ do {
 	<section1> <!--Formulario de login-->
 		<span class="barra"> <!--Menú lateral-->
 			<ul>
-            <li><a href="../admin/usuarios_lista.php">Usuarios</a></li>
-				<li><a href="../admin/productos_lista.php">Productos</a></li>
-				<li><a href="../admin/categorias_lista.php">Categorías</a></li>
+            <li><a title="Usuarios" href="../admin/usuarios_lista.php">Usuarios</a></li>
+				<li><a title="Productos" href="../admin/productos_lista.php">Productos</a></li>
+				<li><a title="Categorias" href="../admin/categorias_lista.php">Categorías</a></li>
 				
 			</ul>
 		</span>

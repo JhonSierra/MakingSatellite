@@ -1,45 +1,8 @@
 <?php require_once('Connections/conexionropa.php'); ?>
-<?php
-if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
-{
-  if (PHP_VERSION < 6) {
-    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-  }
-
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
-
-  switch ($theType) {
-    case "text":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
-    case "long":
-    case "int":
-      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
-      break;
-    case "double":
-      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
-      break;
-    case "date":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;
-    case "defined":
-      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
-      break;
-  }
-  return $theValue;
-}
-}
-
-$varProducto_DatosProducto = "0";
-if (isset($_GET["recordID"])) {
-  $varProducto_DatosProducto = $_GET["recordID"];
-}
-mysql_select_db($database_conexionropa, $conexionropa);
-$query_DatosProducto = sprintf("SELECT * FROM tblproducto WHERE tblproducto.idProductos = %s", GetSQLValueString($varProducto_DatosProducto, "int"));
-$DatosProducto = mysql_query($query_DatosProducto, $conexionropa) or die(mysql_error());
-$row_DatosProducto = mysql_fetch_assoc($DatosProducto);
-$totalRows_DatosProducto = mysql_num_rows($DatosProducto);
+<?php 
+     $_SESSION['MM_Username'] = "";
+    $_SESSION['MM_UserGroup'] = "";
+	$_SESSION['MM_IdUsuario'] = "";
 ?>
 
 <html lang="es">
@@ -72,7 +35,7 @@ $totalRows_DatosProducto = mysql_num_rows($DatosProducto);
 			<center>
 				<li><a target="_self" title="Inicio" href="index.php">Inicio</a></li>
 				<li><a target="_self" title="Catalogo" href="categoria_ver.php">Catálogo</a></li>
-				<li><a target="_self" title="Contacto" href="#info">Contácto</a></li>
+				<li><a target="_self" title="Contacto" href="#info">Contacto</a></li>
                 <li><a target="_self" title="Carrito" href="carrito_lista.php">Carrito</a></li>
 			</center>
 			</ul>
@@ -85,7 +48,6 @@ $totalRows_DatosProducto = mysql_num_rows($DatosProducto);
 				<li><img src="pictures/slider/2.jpg"></li>
 				<li><img src="pictures/slider/3.jpg"></li>
 				<li><img src="pictures/slider/4.jpg"></li>
-                
 			</ul>
 		</div>
 	</header>
@@ -93,30 +55,24 @@ $totalRows_DatosProducto = mysql_num_rows($DatosProducto);
 	<div class="contenedor">
 	<section>
 		<article> <!--Información de la empresa-->
-			<h3><?php echo $row_DatosProducto['strNombre']; ?></h3>
-			<p><table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="450"><center><img src="pictures/productos/<?php echo $row_DatosProducto['strImagen']; ?>" width="450" height="450" /></center></td>
-    <td width="263" valign="top"><h3><?php echo $row_DatosProducto['strNombre']; ?></h3><br>
-      <p><?php echo $row_DatosProducto['dblPrecio']; ?></p><br>
-      <?php if ((isset ($_SESSION['MM_Username'])) && ($_SESSION['MM_Username']!="")){?>
-      <p><a title="Comprar Producto" href="carrito_add.php?recordID=<?php echo $row_DatosProducto['idProductos']; ?>">Comprar</a></p>
-      <?php } 
-	  else 
-	  {?>
-      Para comprar nuestros productos debes<a title="Para comprar nuestros productos debes registrarte" href="alta_usuario.php"> Registrarte</a><?php } ?></td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-</table></p>
+			<br><center>
+            <h2><marquee align="left" bgcolor="#424242">
+              Vuelva pronto
+            </marquee>
+            </h2>
+			<h2><img src="pictures/making/Icon-gracias.png" width="304" height="252"></h2>
+			<h3>Muchas Gracias por comprar</h3>
+			<p>Cerrando sesión...</p></center>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
 		</article>
 	</section>
 
 	<aside> <!--Formulario de login-->
 		<span class="barra"> <!--Menú de ropa-->
-        <br>
         <h3><marquee align="left" bgcolor="#fff" >Catálogo</marquee></h3>
 			<h3><?php include("includes/catalogo.php");?></h3>
             
@@ -147,6 +103,3 @@ $totalRows_DatosProducto = mysql_num_rows($DatosProducto);
 </body>
 
 </html>
-<?php
-mysql_free_result($DatosProducto);
-?>

@@ -6,10 +6,11 @@
 </head>
 
 <body>
-
+<center>
+<img src="../pictures/making/logo.png" width="500" height="400" />
 <?php if ((isset($_POST["enviado"])) && ($_POST["enviado"] == "form1")) {
-	$nombre_archivo = $_FILES['userfiles']['name'];
-	move_uploaded_file($_FILES['userfiles']['tmp_name'],"../documentos/productos/".$nombre_archivo);
+	$nombre_archivo = $_FILES['userfile']['name'];
+	move_uploaded_file($_FILES['userfile']['tmp_name'], "../documentos/productos/".$nombre_archivo);
 	
 	?>
 	<script>
@@ -24,13 +25,14 @@ else
 <form action="gestionimagen.php" method="post" enctype="multipart/form-data" id="form1">
 
   <p>
-    <input name="userfile" type="file" />
+    <input name="userfile" title="Examinar en Equipo" type="file" />
   </p>
   <p>
-    <input type="submit" name="button" id="button" value="Subir Imagen" />
+    <input type="submit" name="button" id="button" title="Subir Imagen" value="Subir Imagen" />
   </p>
   <input type="hidden" name="enviado" value="form1" />
 </form>
 <?php } ?>
+</center>
 </body>
 </html>

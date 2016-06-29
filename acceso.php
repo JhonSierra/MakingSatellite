@@ -67,7 +67,7 @@ if (isset($_POST['strEmail'])) {
     //declare two session variables and assign them
     $_SESSION['MM_Username'] = $loginUsername;
     $_SESSION['MM_UserGroup'] = $loginStrGroup;
-	$_SESSION['MM_IdUsuario'] = $row_LoginRS["IdUsuario"];	      
+	$_SESSION['MM_IdUsuario'] = $row_LoginRS["idUsuario"];	      
 
     if (isset($_SESSION['PrevUrl']) && false) {
       $MM_redirectLoginSuccess = $_SESSION['PrevUrl'];	
@@ -95,7 +95,7 @@ if (isset($_POST['strEmail'])) {
 	<header>
     
 		<font>Iniciar sesión</font>
-		<a title="Logo - Making Satellite" href="Ropa/index.php"><img src="../Ropa/pictures/making/logo.png"></a> <!--Logo de la empresa-->
+		<a title="Logo - Making Satellite" href="index.php"><img src="../Ropa/pictures/making/logo.png"></a> <!--Logo de la empresa-->
 	</header>
 
 	<section> <!--Formulario de login-->
@@ -112,7 +112,7 @@ if (isset($_POST['strEmail'])) {
 				</tr>
 				<tr><td></td></tr>
 				<tr>
-					<td><input type="submit" title="Enviar" name="button" id="button" value="Enviar"/></td>
+					<td><input type="submit" title="Entrar" name="button" id="button" value="Entrar"/></td>
 				</tr>
 				<tr><td></td></tr>
 				<tr><td></td></tr>

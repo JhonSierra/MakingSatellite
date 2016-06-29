@@ -7,14 +7,16 @@
 
 <body>
 <?php 
- //Crear sesión
+ 
  session_start();
- //Vaciar sesión
- $_SESSION = array();
- //Destruir Sesión
- session_destroy();
- //Redireccionar a login.php
+ $_SESSION['usuario']="";
+ $_SESSION['seguridad']="0";
+  session_destroy();
  header("location: login.php");
+ 
+ 
 ?>
+
+
 </body>
 </html>

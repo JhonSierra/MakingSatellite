@@ -14,7 +14,7 @@
 <body>
 	<header>
 		<font>Bienvenido a</font>
-		<a title="Logo - Making Satellite" href="index.html"><img src="pictures/making/logo.png"></a> <!--Logo de la empresa-->
+		<a title="Logo - Making Satellite" href="index.php"><img src="pictures/making/logo.png"></a> <!--Logo de la empresa-->
 		<br>
 		<table class="logbar"> <!--Menú de login-->
 			<tr>
@@ -27,8 +27,8 @@
 			<ul>
 			<center>
 				<li><a target="_self" title="Inicio" href="index.php">Inicio</a></li>
-				<li><a target="_self" title="Catalogo" href="ver_producto.php">Catálogo</a></li>
-				<li><a target="_self" title="Contacto" href="#info">Contácto</a></li>
+				<li><a target="_self" title="Catalogo" href="categoria_ver.php">Catálogo</a></li>
+				<li><a target="_self" title="Contacto" href="#info">Contacto</a></li>
                 <li><a target="_self" title="Carrito" href="carrito_lista.php">Carrito</a></li>
 			</center>
 			</ul>
@@ -53,9 +53,9 @@
             <br>
 			<p><img src="pictures/making/Icon-error.png" width="179" height="162"></p>
             <br>
-            <h2>Tu Email Ya Existe</h2>
+            <h2>Tu correo electrónico ya existe</h2>
             <br>
-			<p>Por favor, comprueba que ya estas dado de alta en el sistema o recuper tu contraseña.</p></center>
+			<p>Por favor comprueba que ya estás dado de alta en el sistema o recupera tu contraseña.</p></center>
             <br>
             <br>
             <br>
@@ -73,6 +73,7 @@
 
 	<aside> <!--Formulario de login-->
 		<span class="barra"> <!--Menú de ropa-->
+        <h3><marquee align="left" bgcolor="#fff" >Catálogo</marquee></h3>
 			<h3><?php include("includes/catalogo.php");?></h3>
             
 		</span>
@@ -81,7 +82,7 @@
 	<br>
 	<footer> <!--Pie de página-->
 		<div id="info"> <!--Datos de contácto-->
-			<h3>Contácto</h3>
+			<h3>Contacto</h3>
 			<p>Dirección: Carrera 81G N° 73 - 57 Sur | Bogotá</p>
 			<br>
 			<p class="tel">Teléfono: 302 5171</p>
@@ -95,7 +96,7 @@
 			<a target="_blank" href="https://www.youtube.com/"><img src="pictures/redes sociales/youtube.png" width="25px" height="22px"></a>
 		</div>
 		<div class="admin">
-		<a href="out/login-administrador.php" title="Ingresar como administrador">Administración</a></div> <!--Login de administrador-->
+		<a href="admin/index.php" title="Ingresar como administrador">Administración</a></div> <!--Login de administrador-->
 		<p class="derechos">© Making Satellite - 2016</p> <!--Derechos de autor-->
 	</footer>
 
