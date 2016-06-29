@@ -1,0 +1,20 @@
+.logout{
+	border: none;
+	background: #FF1C1C;
+	color: #fff;
+	padding: 6px;
+	float: right;
+	margin: 10px 100px 0px 0px;
+	text-decoration: none;
+	font-size: 11pt;
+}
+
+.icon{
+	color: #fff;
+	padding-right: 3px;
+}
+
+.logout:hover{
+	background: #DE0000;
+	border: 1px solid #fff;
+}

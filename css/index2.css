@@ -52,7 +52,7 @@ header font{ /*Mensaje de bienvenida*/
 /*Menú de navegación*/
 nav{
 	background: #186BD0;
-	width: 100%;
+	width: 90%;
 	margin: 0px auto 30px auto;
 	box-shadow: 0px 5px 3px rgba(0,0,0,.5);
 }
@@ -92,7 +92,6 @@ nav ul li a:hover{
 	max-width:1185px;
 	}
 
-
 /*Sección de texto*/
 .contenedor{
 	width: 90%;
@@ -106,7 +105,7 @@ section{
 	margin-top: 30px;
 	float: right;
 	display: inline-block;
-	height: 220px;
+	height: 550px;
 	border: 1px solid #000;
 	box-sizing: border-box;
 }
@@ -133,7 +132,7 @@ aside{
 	margin-top: 30px;
 	padding-right: 54px;
 	margin-right: 0.6%;
-	height: 220px;
+	height: 550px;
 	border: 1px solid #000;
 	box-sizing: border-box;
 }
@@ -172,8 +171,8 @@ aside input:focus{
 
 button{ /*Botón de ingresar*/
 	margin-top: 4px;
-	width: 70px;
-	height: 30px;
+	width: 200px;
+	height: 50px;
 	background: #186BD0;
 	color: #fff;
 	box-shadow: none;
@@ -198,6 +197,28 @@ aside font{
 	color: #000;
 }
 
+/*Boton Productos*/
+.logout{
+	border: none;
+	background: #000;
+	color: #fff;
+	padding: 6px;
+	
+	
+	text-decoration: none;
+	font-size: 11pt;
+}
+
+.icon{
+	color: #fff;
+	
+}
+
+.logout:hover{
+	background: #DE0000;
+	
+}
+
 /*Pie de página*/
 footer{
 	background: #424242;
@@ -205,7 +226,7 @@ footer{
 	height: 160px;
 	margin: auto;
 	display: block;
-	margin-top: 21.2%;
+	margin-top: 46%;
 	clear: both;
 }
 
@@ -268,4 +289,40 @@ footer p{
 	width: 100%;
 	padding-top: 0.2%;
 	color: #CCC;
+}
+
+.producto{
+	background-color: #fff;
+	width: 220px;
+	float: left;
+	margin: 10px;
+	padding: 10px;
+	background-image: url(../productos/fondoproducto.jpg);
+	height: 147px;
+}
+
+.fotoproducto{
+	float: left;
+	height: 120px;
+	width: 120px;
+	}
+	
+.textoproducto{
+	float: left;
+	width: 100px;
+	}
+	
+.table button{ /*Botón de comprar*/
+	text-align: center;
+	margin: 8px 30%;
+	background: #187C15;
+	color: #fff;
+	padding: 5px;
+	border: none;
+	cursor: pointer;
+	border-radius: 3px;
+}
+
+.table button:hover{
+	background: #0D9308;
 }

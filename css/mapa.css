@@ -32,7 +32,7 @@ header font{ /*Mensaje de encabezado*/
 	margin: 0 auto;
 	width: 90%;
 	height: 30px;
-	background: #186BD0;
+	background: #424242;
 	text-align: right;
 	padding: 0;
 	color: #fff;
@@ -80,6 +80,24 @@ nav ul li a{
 nav ul li a:hover{
 	color: #fff;
 	background: #207AE9;
+}
+
+/*Menu Movimiento*/
+
+.menu-fixed{
+	position:fixed;
+	z-index:1000;
+	top:0;
+	width:100%;
+	max-width:1185px;
+	}
+
+
+/*Sección de texto*/
+.contenedor{
+	width: 90%;
+	margin: auto;
+	margin-bottom: -8px;
 }
 
 /*Mapa del sitio*/
@@ -141,7 +159,7 @@ a{
 
 /*Pie de página*/
 footer{
-	background: #000;
+	background: #424242;
 	width: 90%;
 	height: 160px;
 	margin: auto;
