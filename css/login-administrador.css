@@ -1,0 +1,120 @@
+/*Estilos generales*/
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	margin: 20px;
+	font-family: arial;
+	background: #000;
+}
+
+/*Encabezado*/
+header a img{ /*Logo*/
+	display: inline-block;
+	width: 400px;
+	cursor: auto;
+	margin-left: 15%;
+}
+
+header font{ /*Mensaje de encabezado*/
+	font-size: 45pt;
+	text-align: left;
+	display: inline-block;
+	float: right;
+	margin-top: 8%;
+	margin-right: 16%;
+	color: #fff;
+}
+
+/*Formulario de login*/
+section{
+	width: 40%;
+	height: 345px;
+	margin: auto;
+	background: rgba(35,35,35,1);
+	box-shadow: 0px 5px 3px rgba(0,0,0,.5);
+	box-sizing: border-box;
+	margin-bottom: 30px;
+}
+
+section img{
+	width: 300px;
+	height: 100px;
+	margin: auto;
+	text-align: center;
+	padding-left: 22.7%;
+	padding-top: 28px;
+}
+
+table{
+	width: 100%;
+	margin: auto;
+	text-align: center;
+	padding-top: 28px;
+	box-sizing: border-box;
+}
+
+table tr td{
+	width: 90%;
+}
+
+table input{
+	width: 350px;
+	height: 30px;
+}
+
+table input:focus{
+	border: 1px solid #186BD0;
+}
+
+button{
+	background: #186BD0;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	padding: 5px;
+	margin-top: 10px;
+	width: 350px;
+	height: 35px;
+	font-size: 11pt;
+	margin-bottom: 20px;
+}
+
+button:hover{
+	background: #207AE9;
+}
+
+table font{
+	font-size: 11pt;
+	color: #000;
+}
+
+table a{
+	color: #fff;
+	font-size: 11pt;
+}
+
+table a:hover{
+	text-decoration: none;
+}
+
+/*Botón de regresar*/
+.regresar{
+	background: #186BD0;
+	color: #fff;
+	margin: auto;
+	padding: 6px 10px;
+	text-decoration: none;
+	border-radius: 5px;
+}
+
+.regresar:hover{
+	background: #207AE9;
+}
+
+.icon{
+	padding-right: 4px;
+	color: #fff;
+}

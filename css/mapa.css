@@ -1,0 +1,212 @@
+/*Estilos generales*/
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	margin: 20px;
+	font-family: arial;
+}
+
+/*Encabezado*/
+header a img{ /*Logo*/
+	display: inline-block;
+	width: 400px;
+	cursor: auto;
+	margin-left: 15%;
+}
+
+header font{ /*Mensaje de encabezado*/
+	font-size: 48pt;
+	text-align: left;
+	display: inline-block;
+	float: right;
+	margin-top: 8%;
+	margin-right: 16%;
+	color: #000;
+}
+
+/*Menú de login*/
+.logbar{
+	margin: 0 auto;
+	width: 90%;
+	height: 30px;
+	background: #186BD0;
+	text-align: right;
+	padding: 0;
+	color: #fff;
+}
+
+.logbar a{
+	color: #fff;
+	text-decoration: none;
+	padding: 0px 10px;
+	display: inline-block;
+}
+
+.logbar a:hover{
+	text-decoration: underline;
+}
+
+/*Menú de navegación*/
+nav{
+	background: #186BD0;
+	width: 90%;
+	margin: 0px auto 30px auto;
+	box-shadow: 0px 5px 3px rgba(0,0,0,.5);
+}
+
+nav ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+nav ul li{
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+
+nav ul li a{
+	text-decoration: none;
+	font-size: 12pt;
+	color: #fff;
+	display: block;
+	padding: 15px;
+}
+
+nav ul li a:hover{
+	color: #fff;
+	background: #207AE9;
+}
+
+/*Mapa del sitio*/
+section{
+	width: 90%;
+	margin: auto;
+	margin-top: 100px;
+}
+
+.mapa{
+	width: 40%;
+	display: inline-block;
+}
+
+ul{
+	padding: 3px 40px;
+}
+
+ul a{
+	color: #000;
+	font-size: 15pt;
+}
+
+.mapa ul a:hover{
+	padding: 0px 5px;
+	color: #186BD0;
+	text-decoration: none;
+}
+
+li{
+	list-style: none;
+	margin: 3px 20px;
+	font-size: 13.5pt;
+	padding: 1px 50px;
+}
+
+.mapa li a:hover{
+	text-decoration: none;
+	padding: 0px 5px;
+	color: #186BD0;
+}
+
+a{
+	color: #4C4848;
+	text-decoration: underline;
+}
+
+.lado{
+	width: 50%;
+	display: inline-block;
+	float: right;
+	margin-right: 70px;
+}
+
+.lado img{
+	width: 100%;
+	height: 200px;
+}
+
+/*Pie de página*/
+footer{
+	background: #000;
+	width: 90%;
+	height: 160px;
+	margin: auto;
+	display: block;
+	margin-top: 50px;
+	clear: both;
+}
+
+footer h3{
+	font-size: 12pt;
+	padding-bottom: 6px;
+	color: #fff;
+	text-align: center;
+}
+
+footer p{
+	color: #fff;
+	font-size: 11pt;
+	display: inline-block;
+}
+
+.tel{
+	text-align: center;
+	margin: auto;
+}
+
+#info{
+	display: inline-block;
+	float: left;
+	padding-top: 25px;
+	padding-left: 10%;
+}
+
+.redes{
+	float: right;
+	padding-top: 25px;
+	padding-right: 13%;
+}
+
+.redes img{
+	padding: 0px 2px;
+}
+
+.redes img:hover{
+	border-radius: 50%;
+}
+
+.admin{	
+	text-decoration: underline;
+	margin: auto;
+	text-align: center;
+	width: 100%;
+	display: inline-block;
+	padding-top: 1.5%;
+}
+
+.admin a{
+	color: #fff;
+}
+
+.derechos{
+	font-size: 10pt;
+	text-align: center;
+	margin: auto;
+	width: 100%;
+	padding-top: 0.2%;
+	color: #CCC;
+}

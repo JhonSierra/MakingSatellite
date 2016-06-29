@@ -1,0 +1,138 @@
+/*Estilos generales*/
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	margin: 20px;
+	font-family: arial;
+	background: #000;
+}
+
+/*Encabezado*/
+header a img{ /*Logo*/
+	display: inline-block;
+	width: 400px;
+	cursor: auto;
+	margin-left: 15%;
+}
+
+header font{ /*Mensaje de encabezado*/
+	font-size: 40pt;
+	text-align: left;
+	display: inline-block;
+	float: right;
+	margin-top: 8%;
+	margin-right: 16%;
+	color: #fff;
+}
+
+/*Botón de logout*/
+.logout{
+	border: none;
+	background: #FF1C1C;
+	color: #fff;
+	padding: 6px;
+	float: right;
+	margin: 10px 100px 0px 0px;
+	text-decoration: none;
+	font-size: 11pt;
+}
+
+.icon{
+	color: #fff;
+	padding-right: 3px;
+}
+
+.logout:hover{
+	background: #DE0000;
+	border: 1px solid #fff;
+}
+
+/*Sección lateral*/
+section{
+	width: 90%;
+	margin: auto;
+	margin-top: 100px;
+}
+
+.barra ul{ /*Menú lateral*/
+	background: #CCC;
+	list-style: none;
+	width: 25%;
+	height: 50%;
+	padding: 0;
+	margin: 0;
+	border: 1px solid #207AE9;
+	display: inline-block;
+}
+
+.barra ul li{
+	display: block;
+	padding: 0;
+	margin: 0;
+	border-bottom: 1px solid #207AE9;
+}
+
+.barra ul li a{
+	color: #000;
+	text-decoration: none;
+	text-align: left;
+	padding: 20px;
+	display: block;
+}
+
+.barra ul li a:hover{
+	background: #207AE9;
+	color: #fff;
+}
+
+/*Tabla de usuarios*/
+.table{
+	width: 70%;
+	height: 80px;
+	float: right;
+	margin-right: 2%;
+	border: 1px solid #207AE9;
+	border-collapse: collapse;
+	margin-bottom: 2%;
+	box-sizing: border-box;
+}
+
+.table td{
+	border: 1px solid #000;
+	background: #CCC;
+	height: 40px;
+	width: 17.5%;
+	box-sizing: border-box;
+}
+
+.table img{ /*Imágen del producto*/
+	text-align: center;
+	padding: 8px;
+	width: 90%;
+	height: 90%;
+	border-radius: 3px;
+	border-bottom: 1px solid #187C15;
+}
+
+/*Pie de página*/
+footer{
+	background: #207AE9;
+	width: 90%;
+	height: 45px;
+	margin: auto;
+	display: block;
+	margin-top: 2%;
+	clear: both;
+}
+
+.derechos{
+	font-size: 10pt;
+	text-align: center;
+	margin: auto;
+	width: 100%;
+	padding-top: 13px;
+	color: #fff;
+}
